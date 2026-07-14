@@ -25,4 +25,4 @@ jobs:
             cd ${{ inputs.directory }}
             docker compose pull
             docker compose up -d
-            docker images prune --force
+            docker image prune --force
