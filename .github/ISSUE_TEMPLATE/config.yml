@@ -1,0 +1,18 @@
+blank_issues_enabled: false
+
+contact_links:
+- name: Question, idea, or compliance workflow
+  url: https://github.com/orgs/laravel-chronicle/discussions
+  about: Usage questions, "how would I audit X", and half-formed ideas. Not sure whether it's a bug? Start here - we'd rather you asked.
+
+- name: Documentation
+  url: https://laravel-chronicle.dev
+  about: Guides, recipes, and the compliance handbook.
+
+- name: Live demo (MedLedger)
+  url: https://demo.laravel-chronicle.dev
+  about: See the ledger, chain verification, and GDPR erasure working end to end.
+
+- name: Report a security vulnerability
+  url: https://github.com/laravel-chronicle/core/security/advisories/new
+  about: Integrity failures, false verification, key exposure. Please do NOT open a public issue.
