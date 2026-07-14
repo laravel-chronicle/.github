@@ -1,0 +1,34 @@
+name: Documentation
+description: Something in the docs is wrong, missing, or confusing.
+labels: ["documentation", "needs triage"]
+
+body:
+- type: markdown
+  attributes:
+  value: |
+  Documentation issues are among the most useful things the project receives. "I read this page twice and still didn't understand it" is a completely valid report - you don't need to know what the fix is.
+
+- type: input
+  id: location
+  attributes:
+  label: Where
+  description: The page URL, or the file if it's in a README or docblock.
+  placeholder: https://laravel-chronicle.dev/...
+  validations:
+  required: true
+
+- type: textarea
+  id: problem
+  attributes:
+  label: What's wrong
+  description: Incorrect, missing, out of date, or just hard to follow - say which, and what you expected to find.
+  validations:
+  required: true
+
+- type: textarea
+  id: suggestion
+  attributes:
+  label: What would have helped
+  description: Optional. If you know what the docs should say, say it here - that often turns straight into a PR.
+  validations:
+  required: false
