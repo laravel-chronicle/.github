@@ -79,7 +79,7 @@ body:
         Stack traces, verification output, or log lines.
 
         **Redact before pasting.** Never include key material, DEKs, KEKs, or real subject data - Chronicle is often deployed against exactly the kind of data you don't want in a public issue.
-    render: shell
+      render: shell
     validations:
       required: false
 
