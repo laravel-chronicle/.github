@@ -1,0 +1,28 @@
+name: SSH and Pull new image
+
+on: 
+  workflow_call:
+    inputs:
+      directory:
+        required: true
+        type: string
+
+jobs:
+  ssh-and-pull:
+    name: SSH and Pull new Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote SSH
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          port: ${{ secrets.PORT }}
+          fingerprint: ${{ secrets.FINGERPRINT }}
+          script: |
+            cd ${{ inputs.directory }}
+            docker compose pull
+            docker compose up -d
+            docker images prune --force
