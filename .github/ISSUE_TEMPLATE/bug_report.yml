@@ -1,90 +1,92 @@
 name: Bug report
 description: Something behaves differently from how it's documented or intended.
-labels: ["bug", "needs triage"]
+labels: 
+  - bug
+  - needs triage
 
 body:
-- type: markdown
-  attributes:
-  value: |
-  Thanks for taking the time to report this.
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
 
-      **If the bug concerns Chronicle's integrity guarantees** - an entry that could be altered without verification failing, a chain that verifies when it shouldn't, key material appearing somewhere it shouldn't, or an erasure that leaves data recoverable - **please close this and report it privately** through [Security Advisories](https://github.com/laravel-chronicle/core/security/advisories/new) instead.
+        **If the bug concerns Chronicle's integrity guarantees** - an entry that could be altered without verification failing, a chain that verifies when it shouldn't, key material appearing somewhere it shouldn't, or an erasure that leaves data recoverable - **please close this and report it privately** through [Security Advisories](https://github.com/laravel-chronicle/core/security/advisories/new) instead.
 
-- type: textarea
-  id: what-happened
-  attributes:
-  label: What happened
-  description: What did you expect, and what did you get instead?
-  validations:
-  required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
 
-- type: textarea
-  id: reproduction
-  attributes:
-  label: How to reproduce
-  description: |
-  The smallest reproduction you can manage. A failing Pest test is ideal, a minimal repo is great, and clear numbered steps are genuinely fine.
-  placeholder: |
-  1. Configure ...
-  2. Write an entry with ...
-  3. Run `php artisan chronicle:verify`
-  4. Observe ...
-  validations:
-  required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to reproduce
+      description: |
+        The smallest reproduction you can manage. A failing Pest test is ideal, a minimal repo is great, and clear numbered steps are genuinely fine.
+      placeholder: |
+        1. Configure ...
+        2. Write an entry with ...
+        3. Run `php artisan chronicle:verify`
+        4. Observe ...
+    validations:
+      required: true
 
-- type: input
-  id: package-version
-  attributes:
-  label: Package version
-  placeholder: "1.4.0"
-  validations:
-  required: true
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      placeholder: "1.4.0"
+    validations:
+      required: true
 
-- type: input
-  id: php-version
-  attributes:
-  label: PHP version
-  placeholder: "8.3.6"
-  validations:
-  required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "8.3.6"
+    validations:
+      required: true
 
-- type: input
-  id: laravel-version
-  attributes:
-  label: Laravel version
-  placeholder: "11.9.0"
-  validations:
-  required: true
+  - type: input
+    id: laravel-version
+    attributes:
+      label: Laravel version
+      placeholder: "11.9.0"
+    validations:
+      required: true
 
-- type: dropdown
-  id: driver
-  attributes:
-  label: Ledger driver
-  description: Which driver is configured? Skip if it isn't relevant.
-  options:
-  - Database (default)
-  - Queued
-  - Other / custom
-  - Not applicable
-  validations:
-  required: false
+  - type: dropdown
+    id: driver
+    attributes:
+      label: Ledger driver
+      description: Which driver is configured? Skip if it isn't relevant.
+      options:
+        - Database (default)
+        - Queued
+        - Other / custom
+        - Not applicable
+    validations:
+      required: false
 
-- type: textarea
-  id: logs
-  attributes:
-  label: Relevant output
-  description: |
-  Stack traces, verification output, or log lines.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: |
+        Stack traces, verification output, or log lines.
 
-      **Redact before pasting.** Never include key material, DEKs, KEKs, or real subject data - Chronicle is often deployed against exactly the kind of data you don't want in a public issue.
-  render: shell
-  validations:
-  required: false
+        **Redact before pasting.** Never include key material, DEKs, KEKs, or real subject data - Chronicle is often deployed against exactly the kind of data you don't want in a public issue.
+    render: shell
+    validations:
+      required: false
 
-- type: textarea
-  id: context
-  attributes:
-  label: Anything else
-  description: Workarounds you've tried, guesses about the cause, or context about what you were building.
-  validations:
-  required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Workarounds you've tried, guesses about the cause, or context about what you were building.
+    validations:
+      required: false
