@@ -1,46 +1,49 @@
 name: Feature request
 description: Propose something Chronicle should be able to do.
-labels: ["enhancement", "needs triage"]
+labels: 
+  - enhancement
+  - needs triage
 
 body:
-- type: markdown
-  attributes:
-  value: |
-  If this is still a half-formed idea, [Discussions](https://github.com/orgs/laravel-chronicle/discussions) is a better place to start - no structure required, and it's easier to explore an idea there than to defend a proposal here.
+  - type: markdown
+    attributes:
+      value: |
+        If this is still a half-formed idea, [Discussions](https://github.com/orgs/laravel-chronicle/discussions) is a better place to start - no structure required, and it's easier to explore an idea there than to defend a proposal here.
 
-- type: textarea
-  id: problem
-  attributes:
-  label: The problem
-  description: |
-  What are you trying to do that you can't do today? Describe the situation, not the solution - the underlying problem is what we most need to understand, and it often has more than one answer.
-  validations:
-  required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: |
+        What are you trying to do that you can't do today? Describe the situation, not the solution - the underlying problem is what we most need to understand, and it often has more than one answer.
+    validations:
+      required: true
 
-- type: textarea
-  id: proposal
-  attributes:
-  label: What you have in mind
-  description: How you imagine it working. A rough API sketch is welcome but not required.
-  validations:
-  required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you have in mind
+      description: How you imagine it working. A rough API sketch is welcome but not required.
+    validations:
+      required: true
 
-- type: checkboxes
-  id: invariant
-  attributes:
-  label: The append-only invariant
-  description: |
-  Chronicle guarantees that a written ledger entry cannot be altered or removed without verification failing. Features that need to change history can't be built as described - but there is usually an append-only shape that achieves the same goal. (GDPR erasure is the worked example: destroy the key material, append a proof entry, leave the chain intact.)
+  - type: checkboxes
+    id: invariant
+    attributes:
+      label: The append-only invariant
+      description: |
+        Chronicle guarantees that a written ledger entry cannot be altered or removed without verification failing. Features that need to change history can't be built as described - but there is usually an append-only shape that achieves the same goal. (GDPR erasure is the worked example: destroy the key material, append a proof entry, leave the chain intact.)
 
-      If you're unsure whether your idea conflicts, leave this unticked and say so below. Working that out is part of what the issue is for.
-  options:
-  - label: As far as I can tell, this doesn't require mutating or deleting existing ledger entries.
-  required: false
+        If you're unsure whether your idea conflicts, leave this unticked and say so below. Working that out is part of what the issue is for.
+      options:
+        - label: As far as I can tell, this doesn't require mutating or deleting existing ledger entries.
+    validations:
+      required: false
 
-- type: textarea
-  id: alternatives
-  attributes:
-  label: Alternatives you've considered
-  description: Including "I currently work around this by ...", which is useful signal about how much the gap actually costs.
-  validations:
-  required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+      description: Including "I currently work around this by ...", which is useful signal about how much the gap actually costs.
+    validations:
+      required: false
