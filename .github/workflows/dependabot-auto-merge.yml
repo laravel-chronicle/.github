@@ -3,8 +3,6 @@ name: dependabot-auto-merge
 on:
   pull_request:
   workflow_call:
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
-      run: gh pr merge --auto --squash "$PR_URL"
       
 permissions:
   contents: write
