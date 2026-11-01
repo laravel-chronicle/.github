@@ -17,7 +17,7 @@
 
 Most audit logs are just a table you write to. Anyone with database access can edit a row, drop a record, or backdate an entry - and nothing about the log itself would reveal it. Chronicle exists to close that gap.
 
-Chronicle is an **append-only, hash-chained ledger** for Laravel. Every entry is cryptographically linked to the one before it, so tampering with history is detectable rather than silent. Around that core, we maintain packages for permissions, data-subject rights, and admin tooling - the pieces you actually need when an auditor asks how you know your records are intact.
+Chronicle is an **append-only, hash-chained ledger** for Laravel. Every entry is cryptographically linked to the one before it, so tampering with history is detectable rather than silent. Around that core, we maintain packages for admin tooling, external anchoring, and remote key custody - the pieces you actually need when an auditor asks how you know your records are intact.
 
 Built for teams working under SOC 2, HIPAA, and GDPR.
 
